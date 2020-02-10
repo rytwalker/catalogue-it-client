@@ -1,7 +1,8 @@
 import Layout from "../components/Layout";
 import GlobalStyle from "../styles/GlobalStyle";
-import "../styles/reset.css";
 import Navigation from "../components/Navigation";
+
+import "../styles/reset.css";
 
 function MyApp({ Component, pageProps }) {
   return (

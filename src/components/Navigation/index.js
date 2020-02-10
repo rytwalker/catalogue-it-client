@@ -41,7 +41,7 @@ const StyledNavigation = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 0;
+  padding: 4rem 0;
 `;
 
 const Heading = styled.h1`
