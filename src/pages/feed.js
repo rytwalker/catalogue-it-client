@@ -1,7 +1,9 @@
+import FeedCollectables from "../containers/FeedCollectables";
+
 function Feed() {
   return (
     <div>
-      <h1>Feed.</h1>
+      <FeedCollectables />
     </div>
   );
 }

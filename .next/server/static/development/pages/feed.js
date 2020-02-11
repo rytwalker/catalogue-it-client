@@ -93,6 +93,228 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/components/FeedCollectable/index.js":
+/*!*************************************************!*\
+  !*** ./src/components/FeedCollectable/index.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/ryanwalker/Development/catalogue-it-client/src/components/FeedCollectable/index.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+function FeedCollectable() {
+  return __jsx(StyledFeedCollectable, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
+    },
+    __self: this
+  }, __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    },
+    __self: this
+  }, __jsx(User, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: this
+  }, __jsx("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: this
+  }), "RYANWALKER"), __jsx(Title, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: this
+  }, "Title"), __jsx(Description, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: this
+  }, "This is a description etc etc etc"), __jsx(Category, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: this
+  }, "Vinyl")), __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: this
+  }, __jsx(ImageContainer, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: this
+  }), __jsx(LikesBar, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: this
+  }, "200 likes ", __jsx("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: this
+  }))));
+}
+
+const StyledFeedCollectable = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2rem;
+  margin-bottom: 6rem;
+`;
+const User = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+
+  span {
+    margin-right: 1rem;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background: #c4c4c4;
+  }
+`;
+const Title = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
+  font-size: 2.4rem;
+  font-weight: 700;
+`;
+const Description = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
+`;
+const Category = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+`;
+const ImageContainer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
+  height: 200px;
+  width: 100%;
+  border-radius: 3px;
+  background: #c4c4c4;
+  margin-bottom: 1.5rem;
+`;
+const LikesBar = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.8rem;
+
+  span {
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    background: #c4c4c4;
+  }
+`;
+/* harmony default export */ __webpack_exports__["default"] = (FeedCollectable);
+
+/***/ }),
+
+/***/ "./src/containers/FeedCollectables.js":
+/*!********************************************!*\
+  !*** ./src/containers/FeedCollectables.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_FeedCollectable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/FeedCollectable */ "./src/components/FeedCollectable/index.js");
+var _jsxFileName = "/Users/ryanwalker/Development/catalogue-it-client/src/containers/FeedCollectables.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+function FeedCollectables() {
+  return __jsx(FeedCollectablesContainer, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    },
+    __self: this
+  }, __jsx(_components_FeedCollectable__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: this
+  }), __jsx(_components_FeedCollectable__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: this
+  }), __jsx(_components_FeedCollectable__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: this
+  }), __jsx(_components_FeedCollectable__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: this
+  }), __jsx(_components_FeedCollectable__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: this
+  }), __jsx(_components_FeedCollectable__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: this
+  }));
+}
+
+const FeedCollectablesContainer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+`;
+/* harmony default export */ __webpack_exports__["default"] = (FeedCollectables);
+
+/***/ }),
+
 /***/ "./src/pages/feed.js":
 /*!***************************!*\
   !*** ./src/pages/feed.js ***!
@@ -104,24 +326,26 @@ module.exports =
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _containers_FeedCollectables__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../containers/FeedCollectables */ "./src/containers/FeedCollectables.js");
 var _jsxFileName = "/Users/ryanwalker/Development/catalogue-it-client/src/pages/feed.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 function Feed() {
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 3
+      lineNumber: 5
     },
     __self: this
-  }, __jsx("h1", {
+  }, __jsx(_containers_FeedCollectables__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 4
+      lineNumber: 6
     },
     __self: this
-  }, "Feed."));
+  }));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Feed);
@@ -148,6 +372,17 @@ module.exports = __webpack_require__(/*! /Users/ryanwalker/Development/catalogue
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "styled-components":
+/*!************************************!*\
+  !*** external "styled-components" ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("styled-components");
 
 /***/ })
 
