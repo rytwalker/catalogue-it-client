@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Heart from "../../svgs/Heart";
 
 function Collectable() {
   return (
@@ -8,7 +9,10 @@ function Collectable() {
         <Title>Title</Title>
         <Description>This is a description etc etc.</Description>
         <LikesBar>
-          <span></span>200 likes
+          <span>
+            <Heart />
+          </span>
+          200 likes
         </LikesBar>
       </div>
     </StyledCollectable>

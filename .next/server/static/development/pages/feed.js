@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -106,79 +106,109 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _svgs_Heart__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../svgs/Heart */ "./src/svgs/Heart.js");
 var _jsxFileName = "/Users/ryanwalker/Development/catalogue-it-client/src/components/FeedCollectable/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
+
+
 function FeedCollectable() {
+  const {
+    0: likes,
+    1: setLikes
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(100);
+  const {
+    0: hasLiked,
+    1: setHasLiked
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+
+  const handleLikeCollectable = () => {
+    if (hasLiked) {
+      setLikes(likes - 1);
+      setHasLiked(false);
+    } else {
+      setLikes(likes + 1);
+      setHasLiked(true);
+    }
+  };
+
   return __jsx(StyledFeedCollectable, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5
+      lineNumber: 19
     },
     __self: this
   }, __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 20
     },
     __self: this
   }, __jsx(User, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 21
     },
     __self: this
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 22
     },
     __self: this
   }), "RYANWALKER"), __jsx(Title, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 24
     },
     __self: this
   }, "Title"), __jsx(Description, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 25
     },
     __self: this
   }, "This is a description etc etc etc"), __jsx(Category, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 26
     },
     __self: this
   }, "Vinyl")), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 28
     },
     __self: this
   }, __jsx(ImageContainer, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 29
     },
     __self: this
   }), __jsx(LikesBar, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 30
     },
     __self: this
-  }, "200 likes ", __jsx("span", {
+  }, likes, " likes", " ", __jsx("button", {
+    onClick: handleLikeCollectable,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 32
     },
     __self: this
-  }))));
+  }, __jsx(_svgs_Heart__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    hasLiked: hasLiked,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33
+    },
+    __self: this
+  })))));
 }
 
 const StyledFeedCollectable = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
@@ -197,9 +227,9 @@ const User = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
 
   span {
     margin-right: 1rem;
-    height: 40px;
-    width: 40px;
     border-radius: 50%;
+    height: 48px;
+    width: 48px;
     background: #c4c4c4;
   }
 `;
@@ -229,11 +259,11 @@ const LikesBar = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
   align-items: center;
   font-size: 1.8rem;
 
-  span {
-    height: 26px;
-    width: 26px;
-    border-radius: 50%;
-    background: #c4c4c4;
+  button {
+    display: block;
+    cursor: pointer;
+    border: none;
+    background: none;
   }
 `;
 /* harmony default export */ __webpack_exports__["default"] = (FeedCollectable);
@@ -352,7 +382,55 @@ function Feed() {
 
 /***/ }),
 
-/***/ 5:
+/***/ "./src/svgs/Heart.js":
+/*!***************************!*\
+  !*** ./src/svgs/Heart.js ***!
+  \***************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/ryanwalker/Development/catalogue-it-client/src/svgs/Heart.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+function Heart({
+  hasLiked = false
+}) {
+  return __jsx("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "24",
+    height: "24",
+    viewBox: "0 0 24 24",
+    fill: hasLiked ? "red" : "none",
+    stroke: hasLiked ? "red" : "#393939",
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    className: "feather feather-heart",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 3
+    },
+    __self: this
+  }, __jsx("path", {
+    d: "M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: this
+  }));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Heart);
+
+/***/ }),
+
+/***/ 4:
 /*!*********************************!*\
   !*** multi ./src/pages/feed.js ***!
   \*********************************/

@@ -1,6 +1,20 @@
+import { useState } from "react";
 import styled from "styled-components";
+import Heart from "../../svgs/Heart";
 
 function FeedCollectable() {
+  const [likes, setLikes] = useState(100);
+  const [hasLiked, setHasLiked] = useState(false);
+
+  const handleLikeCollectable = () => {
+    if (hasLiked) {
+      setLikes(likes - 1);
+      setHasLiked(false);
+    } else {
+      setLikes(likes + 1);
+      setHasLiked(true);
+    }
+  };
   return (
     <StyledFeedCollectable>
       <div>
@@ -14,7 +28,10 @@ function FeedCollectable() {
       <div>
         <ImageContainer></ImageContainer>
         <LikesBar>
-          200 likes <span></span>
+          {likes} likes{" "}
+          <button onClick={handleLikeCollectable}>
+            <Heart hasLiked={hasLiked} />
+          </button>
         </LikesBar>
       </div>
     </StyledFeedCollectable>
@@ -38,9 +55,9 @@ const User = styled.div`
 
   span {
     margin-right: 1rem;
-    height: 40px;
-    width: 40px;
     border-radius: 50%;
+    height: 48px;
+    width: 48px;
     background: #c4c4c4;
   }
 `;
@@ -75,11 +92,11 @@ const LikesBar = styled.div`
   align-items: center;
   font-size: 1.8rem;
 
-  span {
-    height: 26px;
-    width: 26px;
-    border-radius: 50%;
-    background: #c4c4c4;
+  button {
+    display: block;
+    cursor: pointer;
+    border: none;
+    background: none;
   }
 `;
 

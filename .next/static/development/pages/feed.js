@@ -4223,13 +4223,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _svgs_Heart__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../svgs/Heart */ "./src/svgs/Heart.js");
 
 var _jsxFileName = "/Users/ryanwalker/Development/catalogue-it-client/src/components/FeedCollectable/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 function _templateObject7() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  font-size: 1.8rem;\n\n  span {\n    height: 26px;\n    width: 26px;\n    border-radius: 50%;\n    background: #c4c4c4;\n  }\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  font-size: 1.8rem;\n\n  button {\n    display: block;\n    cursor: pointer;\n    border: none;\n    background: none;\n  }\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -4279,7 +4280,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  font-weight: 700;\n  text-transform: uppercase;\n  font-size: 2.4rem;\n  display: flex;\n  align-items: center;\n  margin-bottom: 3rem;\n\n  span {\n    margin-right: 1rem;\n    height: 40px;\n    width: 40px;\n    border-radius: 50%;\n    background: #c4c4c4;\n  }\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  font-weight: 700;\n  text-transform: uppercase;\n  font-size: 2.4rem;\n  display: flex;\n  align-items: center;\n  margin-bottom: 3rem;\n\n  span {\n    margin-right: 1rem;\n    border-radius: 50%;\n    height: 48px;\n    width: 48px;\n    background: #c4c4c4;\n  }\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -4300,74 +4301,102 @@ function _templateObject() {
 
 
 
+
+
 function FeedCollectable() {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(100),
+      likes = _useState[0],
+      setLikes = _useState[1];
+
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
+      hasLiked = _useState2[0],
+      setHasLiked = _useState2[1];
+
+  var handleLikeCollectable = function handleLikeCollectable() {
+    if (hasLiked) {
+      setLikes(likes - 1);
+      setHasLiked(false);
+    } else {
+      setLikes(likes + 1);
+      setHasLiked(true);
+    }
+  };
+
   return __jsx(StyledFeedCollectable, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5
+      lineNumber: 19
     },
     __self: this
   }, __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 20
     },
     __self: this
   }, __jsx(User, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 21
     },
     __self: this
   }, __jsx("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 22
     },
     __self: this
   }), "RYANWALKER"), __jsx(Title, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 24
     },
     __self: this
   }, "Title"), __jsx(Description, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 25
     },
     __self: this
   }, "This is a description etc etc etc"), __jsx(Category, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 26
     },
     __self: this
   }, "Vinyl")), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 28
     },
     __self: this
   }, __jsx(ImageContainer, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 29
     },
     __self: this
   }), __jsx(LikesBar, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 30
     },
     __self: this
-  }, "200 likes ", __jsx("span", {
+  }, likes, " likes", " ", __jsx("button", {
+    onClick: handleLikeCollectable,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 32
     },
     __self: this
-  }))));
+  }, __jsx(_svgs_Heart__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    hasLiked: hasLiked,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33
+    },
+    __self: this
+  })))));
 }
 
 var StyledFeedCollectable = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
@@ -4501,7 +4530,55 @@ function Feed() {
 
 /***/ }),
 
-/***/ 3:
+/***/ "./src/svgs/Heart.js":
+/*!***************************!*\
+  !*** ./src/svgs/Heart.js ***!
+  \***************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/ryanwalker/Development/catalogue-it-client/src/svgs/Heart.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+function Heart(_ref) {
+  var _ref$hasLiked = _ref.hasLiked,
+      hasLiked = _ref$hasLiked === void 0 ? false : _ref$hasLiked;
+  return __jsx("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "24",
+    height: "24",
+    viewBox: "0 0 24 24",
+    fill: hasLiked ? "red" : "none",
+    stroke: hasLiked ? "red" : "#393939",
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    className: "feather feather-heart",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 3
+    },
+    __self: this
+  }, __jsx("path", {
+    d: "M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: this
+  }));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Heart);
+
+/***/ }),
+
+/***/ 2:
 /*!******************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Ffeed&absolutePagePath=%2FUsers%2Fryanwalker%2FDevelopment%2Fcatalogue-it-client%2Fsrc%2Fpages%2Ffeed.js ***!
   \******************************************************************************************************************************************************/
@@ -4524,5 +4601,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=feed.js.map
