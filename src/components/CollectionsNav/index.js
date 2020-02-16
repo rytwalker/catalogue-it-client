@@ -1,11 +1,24 @@
+import { useState } from "react";
 import styled from "styled-components";
+import Modal from "../Modal";
+import NewCollectableForm from "../NewCollectableForm";
 
 function CollectionsNav() {
+  const [showModal, setShowModal] = useState(false);
   return (
-    <Nav>
-      <Button bold>Most Recent</Button> | <Button>Collections</Button>
-      <Button alignRight>New Collectable</Button>
-    </Nav>
+    <>
+      {showModal && (
+        <Modal closeModal={() => setShowModal(false)}>
+          <NewCollectableForm />
+        </Modal>
+      )}
+      <Nav>
+        <Button bold>Most Recent</Button> | <Button>Collections</Button>
+        <Button onClick={() => setShowModal(!showModal)} alignRight>
+          New Collectable
+        </Button>
+      </Nav>
+    </>
   );
 }
 

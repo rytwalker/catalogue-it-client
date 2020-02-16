@@ -4356,6 +4356,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _Modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Modal */ "./src/components/Modal/index.js");
+/* harmony import */ var _NewCollectableForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../NewCollectableForm */ "./src/components/NewCollectableForm/index.js");
 
 var _jsxFileName = "/Users/ryanwalker/Development/catalogue-it-client/src/components/CollectionsNav/index.js";
 
@@ -4383,34 +4385,59 @@ function _templateObject() {
 
 
 
+
+
+
 function CollectionsNav() {
-  return __jsx(Nav, {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
+      showModal = _useState[0],
+      setShowModal = _useState[1];
+
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, showModal && __jsx(_Modal__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    closeModal: function closeModal() {
+      return setShowModal(false);
+    },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5
+      lineNumber: 11
+    },
+    __self: this
+  }, __jsx(_NewCollectableForm__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: this
+  })), __jsx(Nav, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
     },
     __self: this
   }, __jsx(Button, {
     bold: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 16
     },
     __self: this
   }, "Most Recent"), " | ", __jsx(Button, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 16
     },
     __self: this
   }, "Collections"), __jsx(Button, {
+    onClick: function onClick() {
+      return setShowModal(!showModal);
+    },
     alignRight: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 17
     },
     __self: this
-  }, "New Collectable"));
+  }, "New Collectable")));
 }
 
 var Nav = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].nav(_templateObject());
@@ -4422,6 +4449,261 @@ var Button = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button(_t
   return bold ? "700" : "400";
 });
 /* harmony default export */ __webpack_exports__["default"] = (CollectionsNav);
+
+/***/ }),
+
+/***/ "./src/components/Modal/index.js":
+/*!***************************************!*\
+  !*** ./src/components/Modal/index.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral */ "./node_modules/@babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _hooks_useOnClickOutside__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../hooks/useOnClickOutside */ "./src/hooks/useOnClickOutside.js");
+
+var _jsxFileName = "/Users/ryanwalker/Development/catalogue-it-client/src/components/Modal/index.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+function _templateObject3() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  position: absolute;\n  top: 10px;\n  right: 10px;\n  border: none;\n  background: none;\n  cursor: pointer;\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 30vw;\n  background: #fff;\n  padding: 2rem;\n  position: relative;\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  height: 100vh;\n  width: 100vw;\n  background: rgba(0, 0, 0, 0.2);\n  position: fixed;\n  top: 0;\n  left: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+
+
+
+
+function Modal(_ref) {
+  var children = _ref.children,
+      _ref$closeModal = _ref.closeModal,
+      closeModal = _ref$closeModal === void 0 ? null : _ref$closeModal;
+  var ref = Object(react__WEBPACK_IMPORTED_MODULE_1__["useRef"])();
+  Object(_hooks_useOnClickOutside__WEBPACK_IMPORTED_MODULE_3__["default"])(ref, closeModal);
+  return __jsx(ModalBackground, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: this
+  }, __jsx(StyledModal, {
+    ref: ref,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: this
+  }, __jsx(CloseButton, {
+    onClick: closeModal,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: this
+  }, __jsx("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "24",
+    height: "24",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    className: "feather feather-x-circle",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: this
+  }, __jsx("circle", {
+    cx: "12",
+    cy: "12",
+    r: "10",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25
+    },
+    __self: this
+  }), __jsx("line", {
+    x1: "15",
+    y1: "9",
+    x2: "9",
+    y2: "15",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26
+    },
+    __self: this
+  }), __jsx("line", {
+    x1: "9",
+    y1: "9",
+    x2: "15",
+    y2: "15",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27
+    },
+    __self: this
+  }))), children));
+}
+
+var ModalBackground = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
+var StyledModal = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject2());
+var CloseButton = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button(_templateObject3());
+/* harmony default export */ __webpack_exports__["default"] = (Modal);
+
+/***/ }),
+
+/***/ "./src/components/NewCollectableForm/index.js":
+/*!****************************************************!*\
+  !*** ./src/components/NewCollectableForm/index.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+var _jsxFileName = "/Users/ryanwalker/Development/catalogue-it-client/src/components/NewCollectableForm/index.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+function NewCollectableForm() {
+  return __jsx("form", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
+    },
+    __self: this
+  }, __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    },
+    __self: this
+  }, __jsx("label", {
+    htmlFor: "photo",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: this
+  }, "Upload Photo"), __jsx("input", {
+    type: "text",
+    id: "photo",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: this
+  })), __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: this
+  }, __jsx("label", {
+    htmlFor: "title",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: this
+  }, "Title"), __jsx("input", {
+    type: "text",
+    id: "title",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: this
+  })), __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: this
+  }, __jsx("label", {
+    htmlFor: "description",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: this
+  }, "Description"), __jsx("input", {
+    type: "text",
+    id: "description",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: this
+  })), __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: this
+  }, __jsx("label", {
+    htmlFor: "collection",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: this
+  }, "Collection"), __jsx("input", {
+    type: "text",
+    id: "collection",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: this
+  })), __jsx("button", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    },
+    __self: this
+  }, "Add New Collectable"));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (NewCollectableForm);
 
 /***/ }),
 
@@ -4656,6 +4938,49 @@ var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_t
 
 /***/ }),
 
+/***/ "./src/hooks/useOnClickOutside.js":
+/*!****************************************!*\
+  !*** ./src/hooks/useOnClickOutside.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+ // Hook
+
+function useOnClickOutside(ref, handler) {
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    var listener = function listener(event) {
+      // Do nothing if clicking ref's element or descendent elements
+      if (!ref.current || ref.current.contains(event.target)) {
+        return;
+      }
+
+      handler(event);
+    };
+
+    document.addEventListener("mousedown", listener);
+    document.addEventListener("touchstart", listener);
+    return function () {
+      document.removeEventListener("mousedown", listener);
+      document.removeEventListener("touchstart", listener);
+    };
+  }, // Add ref and handler to effect dependencies
+  // It's worth noting that because passed in handler is a new ...
+  // ... function on every render that will cause this effect ...
+  // ... callback/cleanup to run every render. It's not a big deal ...
+  // ... but to optimize you can wrap handler in useCallback before ...
+  // ... passing it into this hook.
+  [ref, handler]);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (useOnClickOutside);
+
+/***/ }),
+
 /***/ "./src/pages/profile.js":
 /*!******************************!*\
   !*** ./src/pages/profile.js ***!
@@ -4757,7 +5082,7 @@ function Heart(_ref) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fprofile&absolutePagePath=%2FUsers%2Fryanwalker%2FDevelopment%2Fcatalogue-it-client%2Fsrc%2Fpages%2Fprofile.js ***!
   \************************************************************************************************************************************************************/
@@ -4780,5 +5105,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[4,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=profile.js.map

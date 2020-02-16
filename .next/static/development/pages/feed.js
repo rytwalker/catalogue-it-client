@@ -4578,7 +4578,7 @@ function Heart(_ref) {
 
 /***/ }),
 
-/***/ 2:
+/***/ 3:
 /*!******************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Ffeed&absolutePagePath=%2FUsers%2Fryanwalker%2FDevelopment%2Fcatalogue-it-client%2Fsrc%2Fpages%2Ffeed.js ***!
   \******************************************************************************************************************************************************/
@@ -4601,5 +4601,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[3,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=feed.js.map
